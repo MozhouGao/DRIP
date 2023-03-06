@@ -4,7 +4,7 @@ import numpy as np
 import pandas as pd 
 import geopandas as gpd
 
-gps = pd.read_csv('GPS.csv',sep=',')
+gps = pd.read_csv('Measured_GPS.csv',sep=',')
 
 times = gps.time
 lats = np.array(gps.latitude)
@@ -13,7 +13,7 @@ lons = np.array(gps.longitude)
 fieldnames = ['lons','lats','time']
 
 
-with open ('mydesktop.csv','w') as csv_file: 
+with open ('GPS_receiver.csv','w') as csv_file: 
     csv_writer = csv.DictWriter(csv_file, fieldnames = fieldnames)
     csv_writer.writeheader()
 
@@ -21,7 +21,7 @@ Day = True
 i = 1  
 while Day:
         
-    with open('mydesktop.csv', 'a') as csv_file:
+    with open('GPS_receiver.csv', 'a') as csv_file:
         csv_writer = csv.DictWriter(csv_file, fieldnames=fieldnames)
         lat = lats[i]
         lon = lons[i]
