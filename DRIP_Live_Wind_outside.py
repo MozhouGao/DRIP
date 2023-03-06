@@ -121,7 +121,7 @@ tar = []
 Route_x = [] 
 Route_y = [] 
 def animate(i):
-    traj =pd.read_csv(r"mydesktop.csv",sep=',')
+    traj =pd.read_csv(r"GPS_receiver.csv",sep=',')
     
     x_vals = traj['lons']
     y_vals = traj['lats']
